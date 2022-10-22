@@ -1,10 +1,11 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
+import React from "react";
+import { NavBar } from "../components";
 
 export default function User() {
   return (
     <div>
-      <NavBar/>
-      User</div>
-  )
+      <NavBar />
+      User
+    </div>
+  );
 }
