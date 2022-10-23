@@ -1,0 +1,97 @@
+.users {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+.user {
+  background-color: hsl(60, 100%, 67%);
+  width: 100%;
+  border-radius: 10px;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.cardimg {
+  border-radius: 50%;
+}
+.details {
+  width: 100%;
+}
+.location {
+  display: flex;
+  align-items: center;
+}
+.user-wrap {
+  margin-inline: 1em;
+  padding-inline: 1em;
+
+}
+.space-btm {
+  margin-bottom: 0.2em;
+}
+.bttns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5em;
+}
+.bttns button {
+  border: 0;
+  border-radius: 10px;
+  padding: 1em;
+  cursor: pointer;
+  /* color: hsl(60, 98%, 51%); */
+  /* background-color: hsl(60, 17%, 11%); */
+}
+.bttns button:focus {
+  border: 2px solid yellow;
+}
+.bttns button:hover {
+}
+a.more-users {
+  display: block;
+  margin: 1em;
+}
+.img-icon{
+    width: 20px;
+}
+.name{
+    display: flex;
+    gap: .5em;
+    align-items: center;
+}
+.user-link{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    
+}
+.btt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin: 1em 0;
+}
+@media (min-width:40rem) {
+ .users{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1em;
+ }
+ .bttns{
+    grid-template-columns: repeat(7,1fr);
+ }   
+}
+@media (min-width:60rem) {
+ .users{
+ 
+    grid-template-columns: repeat(3,1fr);
+
+ }   
+}

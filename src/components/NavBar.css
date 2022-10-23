@@ -19,12 +19,13 @@ nav {
   transform: translateX(100%);
   transition: 500ms ease-in-out;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
 }
 .show {
   transform: translateX(0%);
   transition: 500ms ease-in-out;
 }
-ul {
+.nav-ul {
   background-color: hsl(0, 0%, 99%);
   width: 70%;
   height: 100%;
@@ -40,7 +41,7 @@ ul {
   color: hsl(60, 28%, 11%);
 }
 @media (min-width: 60rem) {
-  .btn {
+  .ham {
     display: none;
   }
   nav {
@@ -50,7 +51,7 @@ ul {
     position: relative;
     width: auto;
   }
-  ul {
+  .nav-ul{
     background-color: transparent;
     display: flex;
     gap: 2em;
