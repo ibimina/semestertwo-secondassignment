@@ -11,7 +11,7 @@ export default function User() {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="user-container">
         {user && (
           <div key={user.login.uuid} className="wrap">
@@ -27,15 +27,7 @@ export default function User() {
                     <span>{user.name.first} </span>
                     <span> {user.name.last} </span>
                   </p>
-                  <div className="flex">
-                    {" "}
-                    <img
-                      src={"../assets/icons8-circled-envelope.svg"}
-                      alt="email icon"
-                      className="img-icon"
-                    />{" "}
-                    <span>{user.email}</span>
-                  </div>
+
                   <div className="flex">
                     {" "}
                     <img
@@ -44,6 +36,16 @@ export default function User() {
                       className="img-icon"
                     />{" "}
                     <span>{user.phone}</span>
+                  </div>
+                  <div className="flex">
+                    {" "}
+                    <img
+                      src={"../assets/icons8-city-buildings.svg"}
+                      alt="city icon"
+                      className="img-icon"
+                    />{" "}
+                    <span>{user.location.city},</span>
+                    <span>{user.location.country} </span>
                   </div>
                 </div>
               </div>
@@ -78,30 +80,29 @@ export default function User() {
                   />{" "}
                   {user.location.postcode}
                 </div>
-                <p className="flex">
-                  {" "}
-                  <img
-                    src={"../assets/icons8-city-buildings.svg"}
-                    alt="city icon"
-                    className="img-icon"
-                  />{" "}
-                  <span>{user.location.city},</span>
-                  <span>{user.location.country} </span>
-                </p>
+              </div>
+              <div className="flex">
+                {" "}
+                <img
+                  src={"../assets/icons8-circled-envelope.svg"}
+                  alt="email icon"
+                  className="img-icon mail"
+                />{" "}
+                <span>{user.email}</span>
               </div>
             </div>
 
             <BrowserMap location={user.location} />
-            <div className="back">
-              <button
-                onClick={() => navi(-1)}
-                aria-label="go back"
-                className="btn arrow"
-              ></button>
-              <span className="text">go back</span>
-            </div>
           </div>
         )}
+      </div>
+      <div className="back">
+        <button
+          onClick={() => navi(-1)}
+          aria-label="go back"
+          className="btn arrow"
+        ></button>
+        <span className="text">go back</span>
       </div>
     </>
   );
