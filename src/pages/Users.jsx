@@ -1,21 +1,121 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { NavBar } from "../components";
 import useFetch from "../hooks/useFetch";
 import "./users.css";
+const natt = [
+  "AU",
+  "BR",
+  "CA",
+  " CH",
+  "DE",
+  "DK",
+  "ES",
+  "FI",
+  "FR",
+  "GB",
+  "IE",
+  "IN",
+  "IR",
+  "MX",
+  "NL",
+  "NO",
+  "NZ",
+  "RS",
+  "TR",
+  "UA",
+  "US",
+];
 export default function Users() {
   const numberOfPages = 50;
+  const [nat, setNat] = useState([]);
+
+  const [show, setShow] = useState(false);
   const [page, setPage] = useState(1);
-  const[result,setResult]=useState(12)
-  const url = `https://randomuser.me/api/?page=${page}&results=${result}&seed=abc`;
+  let url = `https://randomuser.me/api/?page=${page}&results=12&seed=abc`;
 
-  const { loading, users } = useFetch(url);
+  const { loading, users, filterNat, filterGen } = useFetch(url);
 
+  const handleCheck = (e) => {
+    setNat((prev) => [...prev, e.target.value]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    filterNat(nat);
+    document.querySelector("form").reset();
+    setShow(false);
+  };
+  const handleReset = () => {
+    setNat([]);
+    document.querySelector("form").reset();
+  };
+
+  const handleGender = (e) => {
+    if (e.target.value !== "") {
+      filterGen(e.target.value);
+    }
+  };
+  if (users.length === 0) {
+    return (
+      <div className="nouser">
+        No user
+        <Link to="/">users</Link>
+      </div>
+    );
+  }
   return (
     <>
       <NavBar />
+
       <div className="user-wrap">
         {loading && <>loading</>}
+        <div className="nat-wrap">
+          <div className="flex">
+            <div
+              className="arrowdown"
+              onClick={() => (!show ? setShow(true) : setShow(false))}
+            >
+              <p>Nationalities</p>
+              <img
+                src="/assets/icon-next.svg"
+                alt="arrow down icon"
+                className={`${!show ? "down" : "up"}`}
+              />
+            </div>
+            <select
+              defaultValue="null"
+              onChange={handleGender}
+              className="arrowdown"
+            >
+              <option value="null" hidden>
+                gender
+              </option>
+              <option value="female">female</option>
+              <option value="male">male</option>
+              <option value="">Both</option>
+            </select>
+          </div>
+
+          <form
+            className={`ff ${!show ? "hide" : "show"}`}
+            onSubmit={handleSubmit}
+            onReset={handleReset}
+          >
+            <div className={`col`}>
+              {natt.map((nat) => (
+                <label key={nat} className="checkwrap" onClick={handleCheck}>
+                  <input type="checkbox" value={nat} />
+                  <span>{nat}</span>
+                </label>
+              ))}
+            </div>
+            <div className="flex">
+              <input type="submit" value="submit" className="submit" />
+              <input type="reset" value="reset" className="submit" />
+            </div>
+          </form>
+        </div>
         <ul className="users">
           {users &&
             users.map((user) => (
@@ -27,11 +127,6 @@ export default function Users() {
                 />
                 <div className="details">
                   <div className="name space-btm">
-                    {/* <img
-                      src="../assets/icons8-user.svg"
-                      alt="user icon"
-                      className="img-icon"
-                    /> */}
                     <p>
                       {" "}
                       <span>{user.name.first} </span>
@@ -54,11 +149,6 @@ export default function Users() {
                     state={{ page, user }}
                     className="user-link"
                   >
-                    {/* <img
-                      src={"../assets/icons8-information.svg"}
-                      alt="location icon"
-                      className="img-icon"
-                    /> */}
                     <span> More info</span>
                   </Link>
                 </div>
