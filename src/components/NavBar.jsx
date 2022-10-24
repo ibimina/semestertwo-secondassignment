@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <>
       <header>
-        <div className="logo">IBUsers</div>
+        <div className="logo">IBuddy</div>
         <button
           onClick={() => (!isShown ? setIsShown(true) : setIsShown(false))}
           aria-label={!isShown ? "open menu" : "close menu"}
