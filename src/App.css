@@ -28,3 +28,33 @@ body {
   align-items: center;
   text-align: center;
 }
+.developer{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dev-block{
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+.social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-top: 1em;
+}
+.social svg{
+color: blue;
+}
+.social svg:hover{
+  color: black;
+}
+.techbaddie{
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+  display: block;
+}

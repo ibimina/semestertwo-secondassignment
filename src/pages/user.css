@@ -1,5 +1,5 @@
 .user-container{
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,8 +15,8 @@
 }
 .back{
     position: absolute;
-    top: 3.5em;
-    left: 1em;
+    top: 2em;
+    left: 2em;
 }
 .arrow{
     background-image: url("/assets/icons8-back-arrow.svg");
@@ -32,7 +32,7 @@ display: block;
 .details-sec{
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: .5em;
     margin-bottom: 1em;
 }
 .full-details{
@@ -47,9 +47,14 @@ column-gap: 5em;
     margin-bottom: .2em;
 }
 @media (min-width:60rem) {
+    .back{
+        top: 3em;
+        left: 2em;
+    }
     .wrap{
         display: flex;
         gap: 2em;
         align-items: center;
     }
+
 }
