@@ -9,7 +9,7 @@ const natt = [
   "AU",
   "BR",
   "CA",
-  " CH",
+  "CH",
   "DE",
   "DK",
   "ES",
@@ -49,10 +49,11 @@ export default function Users() {
   };
 
   const handleGender = (e) => {
-     e.preventDefault();
+    e.preventDefault();
     if (e.target.value !== "") {
       filterGen(e.target.value);
     }
+   
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +67,7 @@ export default function Users() {
       na("/nobuddy");
     }
   }, [users]);
-
+ 
   return (
     <>
       <NavBar />
@@ -78,7 +79,7 @@ export default function Users() {
               className="arrowdown"
               onClick={() => (!show ? setShow(true) : setShow(false))}
             >
-              <p>Nationalities</p>
+              <span>Country</span>
               <img
                 src="/assets/icon-next.svg"
                 alt="arrow down icon"
@@ -87,15 +88,15 @@ export default function Users() {
             </div>
             <select
               defaultValue="null"
+              onClick={() => setShow(false)}
               onChange={handleGender}
-              className="arrowdown"
+              className="arrowdown space"
             >
               <option value="null" hidden>
-                gender
+                Gender
               </option>
               <option value="female">female</option>
               <option value="male">male</option>
-              <option value="">Both</option>
             </select>
           </div>
 
@@ -104,7 +105,7 @@ export default function Users() {
             onSubmit={handleSubmit}
             onReset={handleReset}
           >
-            <div className={`col`}>
+            <div className="col">
               {natt.map((nat) => (
                 <label key={nat} className="checkwrap" onClick={handleCheck}>
                   <input type="checkbox" value={nat} />
@@ -112,13 +113,13 @@ export default function Users() {
                 </label>
               ))}
             </div>
-            <div className="flex">
+            <div className="flex ma-top">
               <input type="submit" value="submit" className="submit" />
               <input type="reset" value="reset" className="submit" />
             </div>
           </form>
         </div>
-        {loading && <>loading</>}
+        {loading && <p className="loading">loading</p>}
         <ul className="users">
           {users &&
             users.map((user) => (
