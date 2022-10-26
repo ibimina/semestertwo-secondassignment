@@ -1,7 +1,9 @@
-import { useRef, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { NavBar } from "../components";
+import Footer from "../components/Footer";
 import useFetch from "../hooks/useFetch";
+
 import "./users.css";
 const natt = [
   "AU",
@@ -29,47 +31,49 @@ const natt = [
 export default function Users() {
   const numberOfPages = 50;
   const [nat, setNat] = useState([]);
-
+  const [s, setS] = useState(false);
   const [show, setShow] = useState(false);
   const [page, setPage] = useState(1);
+
   let url = `https://randomuser.me/api/?page=${page}&results=12&seed=abc`;
 
   const { loading, users, filterNat, filterGen } = useFetch(url);
-
+  const na = useNavigate();
   const handleCheck = (e) => {
     setNat((prev) => [...prev, e.target.value]);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    filterNat(nat);
-    document.querySelector("form").reset();
-    setShow(false);
-  };
   const handleReset = () => {
     setNat([]);
     document.querySelector("form").reset();
   };
 
   const handleGender = (e) => {
+     e.preventDefault();
     if (e.target.value !== "") {
       filterGen(e.target.value);
     }
   };
-  if (users.length === 0) {
-    return (
-      <div className="nouser">
-        No user
-        <Link to="/">users</Link>
-      </div>
-    );
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShow(false);
+    filterNat(nat, users);
+    document.querySelector("form").reset();
+  };
+  useEffect(() => {
+    if (users === "") {
+      console.log("gg");
+      na("/nobuddy");
+    }
+  }, [users]);
+
   return (
     <>
       <NavBar />
 
       <div className="user-wrap">
         {loading && <>loading</>}
+
         <div className="nat-wrap">
           <div className="flex">
             <div
@@ -178,16 +182,8 @@ export default function Users() {
             next
           </button>
         </div>
-        <div className="flex">
-          <Link to="female" className="more-users">
-            see female users
-          </Link>
-          <Link to="male" className="more-users">
-            see male users
-          </Link>
-        </div>
-        <Outlet />
       </div>
+      <Footer/>
     </>
   );
 }
