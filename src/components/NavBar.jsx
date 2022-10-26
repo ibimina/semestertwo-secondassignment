@@ -13,7 +13,7 @@ function NavBar() {
           aria-expanded={isShown}
           className={`btn ham ${!isShown ? "open" : "close"}`}
         ></button>
-        <nav data-visible={isShown} className={`${!isShown ? "hide" : "show"}`}>
+        <nav data-visible={isShown} className={`bl ${!isShown ? "hidee" : "shown"} ` }>
           <ul className="nav-ul">
             <li className="nav-link">
               <NavLink to="/" className="link" end>
@@ -22,7 +22,7 @@ function NavBar() {
             </li>
             <li className="nav-link">
               <NavLink to="/users" className="link">
-                users
+                techbuddy
               </NavLink>
             </li>
         
