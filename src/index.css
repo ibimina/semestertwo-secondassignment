@@ -27,3 +27,9 @@ body,
 .loading{
   text-align: center;
 }
+footer{
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  padding: 1em ;
+}

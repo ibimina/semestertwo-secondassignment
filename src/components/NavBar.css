@@ -22,7 +22,7 @@ nav {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10000;
 }
-.show {
+.shown {
   transform: translateX(0%);
   transition: 500ms ease-in-out;
 }
@@ -44,7 +44,6 @@ nav {
 }
 .link.active {
   color: hsl(224, 98%, 42%);
-  border-bottom: 5px solid hsl(224, 98%, 42%);
 }
 .link:hover{
   color: hsl(224, 98%, 42%); 
@@ -54,12 +53,16 @@ nav {
   .ham {
     display: none;
   }
+  .bl{
+  display: block;
+}
   nav {
     transform: translateX(0%);
     transition: 500ms ease-in-out;
     background-color: transparent;
     position: relative;
     width: auto;
+     display: block;
   }
   .nav-ul{
     background-color: transparent;
@@ -71,4 +74,8 @@ nav {
   .nav-link {
     margin-bottom: 0;
   }
+  .link.active {
+  border-bottom: 5px solid hsl(224, 98%, 42%);
+}
+
 }

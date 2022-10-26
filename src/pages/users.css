@@ -1,5 +1,5 @@
 .user-wrap {
-  margin-top: 2em;
+  margin: 2em 1em;
 }
 .users {
   margin: auto;
@@ -28,8 +28,14 @@
 .arrowdown .up {
   transform: rotate(270deg);
 }
+.nouser {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .user {
-  background-color: hsl(207, 23%, 92%);
+  background-color: hsl(236, 87%, 85%);
   width: 100%;
   border-radius: 10px;
   padding: 1em;
@@ -64,13 +70,19 @@
   border-radius: 10px;
   padding: 1em;
   cursor: pointer;
+  background-color: hsl(240, 74%, 33%);
+  color: aliceblue;
   /* color: hsl(60, 98%, 51%); */
   /* background-color: hsl(60, 17%, 11%); */
 }
 .bttns button:focus {
-  border: 2px solid yellow;
+  border: 2px solid black;
+   background-color: hsl(61, 89%, 56%);
+   color: black;
 }
 .bttns button:hover {
+  color: hsl(240, 77%, 45%);
+  background-color: hsl(61, 89%, 56%);
 }
 a.more-users {
   display: block;
@@ -108,7 +120,6 @@ a.more-users {
 }
 .show {
   display: block;
-
 }
 .submit {
   margin: 1em;
@@ -150,5 +161,8 @@ a.more-users {
 @media (min-width: 60rem) {
   .users {
     grid-template-columns: repeat(3, 1fr);
+  }
+    .bttns {
+    grid-template-columns: repeat(11, 1fr);
   }
 }

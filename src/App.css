@@ -21,40 +21,122 @@ body {
   padding: 0;
   margin: 0;
 }
-.redirect{
+.redirect {
   min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.developer{
+.developer {
   min-height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
-.dev-block{
+.dev-block {
   max-width: 500px;
   width: 100%;
   text-align: center;
 }
-.social{
+.social {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2em;
   margin-top: 1em;
 }
-.social svg{
-color: blue;
+.social svg {
+  color: blue;
 }
-.social svg:hover{
+.social svg:hover {
   color: black;
 }
-.techbaddie{
-  max-width: 400px;
+.connect {
+  position: relative;
   width: 100%;
-  margin: auto;
+}
+
+.dvg {
+  max-height: 30em;
+  width: 100%;
   display: block;
+  margin-inline: auto;
+}
+
+.hd {
+  text-align: center;
+  margin: 1em 0;
+}
+.home {
+  position: relative;
+  background-image: url("https://img.freepik.com/free-photo/man-using-digital-tablet-psd-mockup-smart-technology_53876-110815.jpg?size=626&ext=jpg&ga=GA1.2.432268175.1666705284&semt=sph");
+  height: 20em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.connect {
+  font-weight: 900;
+  font-size: 22px;
+  margin-bottom: 1em;
+}
+.connect-btn {
+  background-color: yellow;
+  padding: 0.5em 1em;
+}
+.find {
+  margin-bottom: 2em;
+  font-weight: 700;
+  text-shadow: 1px  1px rgba(0, 0, 0, .5);
+}
+.text-sect {
+  padding: 1em;
+  position: absolute;
+  top: 1em;
+  color: hsl(0, 100%, 100%);
+}
+.afro {
+  width: 100%;
+}
+
+.sub-sect {
+  padding: 1em 0;
+}
+.sub-sect h2 {
+  padding-inline: 0.5em;
+  margin-bottom: 1em;
+}
+.sub-sect p {
+  padding-inline: 1em;
+  margin: 1em 0 0.5em;
+}
+.title {
+  margin-bottom: 1em;
+  font-weight: 900;
+}
+.faq {
+  background-color: hsl(61, 95%, 84%);
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 2em;
+}
+.left {
+  text-align: justify;
+  margin-bottom: 0.5em;
+  font-size: 20px;
+}
+.pair {
+  font-size: 20px;
+  font-weight: 900;
+}
+.ques {
+  color: hsl(233, 72%, 27%);
+}
+@media (min-width: 60rem) {
+  .ssb {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+  }
 }
