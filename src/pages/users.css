@@ -1,4 +1,4 @@
-.user-wrap {
+.user-wrap{
   margin: 2em 1em;
 }
 .users {
@@ -11,6 +11,12 @@
   gap: 2em;
   margin-bottom: 1em;
 }
+.loading{
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .arrowdown {
   display: flex;
   justify-content: center;
@@ -20,19 +26,23 @@
   background-color: grey;
   padding: 0.5em;
   border-radius: 10px;
-  margin-bottom: 1em;
+}
+.arrowdown img{
+  width: 8px;
 }
 .arrowdown .down {
   transform: rotate(90deg);
+   width: 8px;
 }
 .arrowdown .up {
   transform: rotate(270deg);
+   width: 8px;
 }
 .nouser {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 85vh;
+}
+select.arrowdown:focus{
+  background-color: hsl(0, 19%, 93%);
 }
 .user {
   background-color: hsl(236, 87%, 85%);
@@ -60,6 +70,9 @@
 .space-btm {
   margin-bottom: 0.2em;
 }
+ .checkwrap input{
+  cursor: pointer;
+}
 .bttns {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -72,8 +85,6 @@
   cursor: pointer;
   background-color: hsl(240, 74%, 33%);
   color: aliceblue;
-  /* color: hsl(60, 98%, 51%); */
-  /* background-color: hsl(60, 17%, 11%); */
 }
 .bttns button:focus {
   border: 2px solid black;
@@ -124,13 +135,16 @@ a.more-users {
 .submit {
   margin: 1em;
   width: 100px;
-  padding: 0.5em;
+  padding: 1em;
   border: 0;
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: black;
   color: hsl(60, 90%, 54%);
   cursor: pointer;
   font-weight: 700;
+}
+.space{
+  padding: .7em;
 }
 .submit:hover {
   color: black;
@@ -141,11 +155,15 @@ a.more-users {
 }
 .nat-wrap {
   position: relative;
+  margin-bottom: 1em;
 }
-
+.ma-top{
+  margin-top: 1em;
+}
 .col {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  color: hsl(59, 94%, 56%);
 }
 
 @media (min-width: 40rem) {
@@ -157,6 +175,9 @@ a.more-users {
   .bttns {
     grid-template-columns: repeat(7, 1fr);
   }
+  .col {
+  grid-template-columns: repeat(7, 1fr);
+}
 }
 @media (min-width: 60rem) {
   .users {
