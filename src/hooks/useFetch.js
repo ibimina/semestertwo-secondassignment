@@ -41,8 +41,8 @@ export default function useFetch(url) {
   };
 
   const filterGen = (gen) => {
-    setUsers((prev) => prev.filter((user) => gen.includes(user.gender)));
-  
+    setUsers((prev) => prev.filter((user) => gen===user.gender));
+   setUsers((prev) => (prev.length == 0 ? "" : prev));
   };
 
   return { loading, users, filterNat, filterGen};
