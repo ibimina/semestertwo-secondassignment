@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 export default function () {
   return (
     <><NavBar/>
-      <div className="nouser">
+      <div className="redirect nouser">
         <div>
           <p> No tech buddy found</p>
           <Link to="/users">go back</Link>
