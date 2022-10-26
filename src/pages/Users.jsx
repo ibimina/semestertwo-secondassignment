@@ -72,8 +72,6 @@ export default function Users() {
       <NavBar />
 
       <div className="user-wrap">
-        {loading && <>loading</>}
-
         <div className="nat-wrap">
           <div className="flex">
             <div
@@ -120,6 +118,7 @@ export default function Users() {
             </div>
           </form>
         </div>
+        {loading && <>loading</>}
         <ul className="users">
           {users &&
             users.map((user) => (
@@ -183,7 +182,7 @@ export default function Users() {
           </button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
