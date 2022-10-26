@@ -1,58 +1,33 @@
 import React from "react";
-
-import { FaGithub } from "react-icons/fa";
-import { FiTwitter } from "react-icons/fi";
-import { BsLink45Deg } from "react-icons/bs";
-import { AiOutlineMail, AiFillLinkedin } from "react-icons/ai";
-import { NavBar } from "../components";
+import { Link } from "react-router-dom";
+import { Footer, NavBar } from "../components";
+import { Outlet } from "react-router-dom";
 export default function Contact() {
   return (
     <>
       <NavBar />
       <div className="developer">
         <div className="dev-block">
-          <p>List of users</p>
-          <p>content developed with </p>
-          <p>Ibimina Hart</p>
+          <p className="sub-sect">List of users</p>
+          <p>
+            Content consumed data from{" "}
+            <a href="https://randomuser.me" target="_blank" rel="noreferrer">
+              random user api
+            </a>
+          </p>
+
           <div className="social">
-            <a
-              href="https://github.com/ibimina"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="https://linkedin.com/in/ibimina-hart"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiFillLinkedin />
-            </a>
-            <a
-              href="mailto: ibimina.c.hart@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <AiOutlineMail />
-            </a>
-            <a
-              href="https://ibimina.github.io/ibimina-portfolio/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <BsLink45Deg />
-            </a>
-            <a
-              href="https://twitter.com/ibimina"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FiTwitter />
-            </a>
+            <Link to="fact" className="more-users">
+              fact
+            </Link>
+            <Link to="dev" className="more-users">
+              contact
+            </Link>
           </div>
+          <Outlet />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
