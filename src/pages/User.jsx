@@ -1,17 +1,17 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { NavBar } from "../components";
+import { Footer, NavBar } from "../components";
 import BrowserMap from "../components/BrowserMap";
 
 import "./user.css";
 export default function User() {
   const location = useLocation();
-  const { page, user } = location.state;
+  const { user } = location.state;
   const navi = useNavigate();
 
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar />
       <div className="user-container">
         {user && (
           <div key={user.login.uuid} className="wrap">
@@ -104,6 +104,7 @@ export default function User() {
         ></button>
         <span className="text">go back</span>
       </div>
+      <Footer/>
     </>
   );
 }
