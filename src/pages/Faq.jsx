@@ -3,7 +3,7 @@ import React from "react";
 export default function Faq() {
   return (
     <div className="faq">
-      <p className="title">IBuddy fun facts</p>
+      <p className="title">Why you need IBuddy?</p>
       <ul>
         <li className="left">
           Eliminate delays to find or test a solution or allow for a better
@@ -11,7 +11,7 @@ export default function Faq() {
         </li>
 
         <li className="left">
-          Thereby effectively expanding the skill set and knowledge
+          Helps to effectively expanding the skill set and knowledge
         </li>
         <li className="left">
           Having another pair of eyes on your code results to fewer defects

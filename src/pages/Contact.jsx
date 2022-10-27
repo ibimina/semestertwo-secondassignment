@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Footer, NavBar } from "../components";
 import { Outlet } from "react-router-dom";
 export default function Contact() {
@@ -11,18 +11,23 @@ export default function Contact() {
           <p className="sub-sect">List of users</p>
           <p>
             Content consumed data from{" "}
-            <a href="https://randomuser.me" target="_blank" rel="noreferrer">
-              random user api
+            <a
+              href="https://randomuser.me"
+              target="_blank"
+              rel="noreferrer"
+              className="yellow"
+            >
+              Randomuser.me
             </a>
           </p>
 
           <div className="social">
-            <Link to="fact" className="more-users">
+            <NavLink to="fact" className="more-users yellow">
               fact
-            </Link>
-            <Link to="dev" className="more-users">
+            </NavLink>
+            <NavLink to="dev" className="more-users yellow">
               contact
-            </Link>
+            </NavLink>
           </div>
           <Outlet />
         </div>

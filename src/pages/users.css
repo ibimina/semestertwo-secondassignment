@@ -165,7 +165,14 @@ a.more-users {
   grid-template-columns: repeat(4, 1fr);
   color: hsl(59, 94%, 56%);
 }
+.yellow{
+  color: hsl(197, 78%, 49%);
+   font-weight: 700;
+}
+.yellow.active{
 
+    color: hsl(249, 77%, 49%);
+}
 @media (min-width: 40rem) {
   .users {
     display: grid;

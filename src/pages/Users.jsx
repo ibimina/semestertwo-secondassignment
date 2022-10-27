@@ -63,7 +63,6 @@ export default function Users() {
   };
   useEffect(() => {
     if (users === "") {
-      console.log("gg");
       na("/nobuddy");
     }
   }, [users]);
